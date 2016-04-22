@@ -4,6 +4,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+use yii\widgets\ActiveForm;
+ //\yii::$app->view->registerCssFile('css/developer.css');
 ?>
 <!-- GALLERY -->
 <div  class="gallery-section">
@@ -42,4 +44,18 @@
         
     </div>
 </div>
+<?php $form = ActiveForm::begin(['options'=>['class'=>'subscribe-form']]); ?>
+        <h3></h3>
+        <fieldset class="email-holder">
+            <input type="text" placeholder="Enter your email here... " name="email" class="email">
+            <input type="text" placeholder="Enter your email here... " name="email" class="email">
+            <input type="submit" class="btn light" value="Go for order">
+        </fieldset>
+<!--        <fieldset class="button-holder">
+            <input type="submit" class="btn light" value="Go for order">
+            <a href="#" class="btn default">Learn More</a>
+        </fieldset>-->
+        <p class="small">Get our latest updates and news in your inbox!</p>
+    <?php ActiveForm::end(); ?>
+
 <!-- END GALLERY -->

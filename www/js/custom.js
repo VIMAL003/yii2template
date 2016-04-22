@@ -14,3 +14,11 @@ $(window).load(function () {
         }
             
 });
+
+$('.block-content').on('click',function(){
+   if(!$(this).hasClass('addtocart')) {
+       $(this).addClass('addtocart');
+   }else{
+       $(this).removeClass('addtocart');
+   }
+});

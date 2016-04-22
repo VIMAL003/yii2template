@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
         'css/font-awesome.css',
         'css/bootstrap.min.css',
         'css/templatemo-style.css',
+        'css/developer.css',
     ];
     public $js = [
         'js/vendor/modernizr-2.6.2.min.js',
