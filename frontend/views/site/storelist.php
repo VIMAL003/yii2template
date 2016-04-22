@@ -19,10 +19,10 @@
             <div class="col-md-4 col-sm-6">
                 <div class="project-block">
                     <div class="thumb-it">
-                        <a href="#"><img src="img/3.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="img/3.jpg" alt=""></a>
                     </div>
                     <div class="block-content">
-                        <h3><a href="#"><?= $stall->name; ?></a></h3>
+                        <h3><a href="javascript:void(0)"><?= "order from ".$stall->name; ?></a></h3>
                     </div>
                 </div>
             </div>
@@ -30,10 +30,10 @@
             <div class="col-md-4 col-sm-6">
                 <div class="project-block">
                     <div class="thumb-it">
-                        <a href="#"><img src="img/5.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="img/5.jpg" alt=""></a>
                     </div>
                     <div class="block-content">
-                        <h3><a href="#">No Stall Available</a></h3>
+                        <h3><a href="javascript:void(0);">No Stall Available</a></h3>
                     </div>
                 </div>
             </div>
