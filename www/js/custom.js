@@ -18,7 +18,13 @@ $(window).load(function () {
 $('.block-content').on('click',function(){
    if(!$(this).hasClass('addtocart')) {
        $(this).addClass('addtocart');
+       var dataLi = "<li id='"+$(this).attr('id')+"'>"+ $(this).attr('id') +"</li>";
+       var stallUi = $("#orderStallList");
+       stallUi.html('');
+       stallUi.append(dataLi);
    }else{
        $(this).removeClass('addtocart');
+       var dataRemove = $(this).attr('id');
+       //$('#'+dataRemove).remove();
    }
 });
