@@ -3,6 +3,8 @@
 .addtocart{background: #008000 !important;}
 .order-form .input-holder label{padding: 10px;}
 .stallnameList{border: 1px solid;padding: 18px;}
+.alert-success.alert.fade.in{opacity: 0.98 !important;background:#fff;}
+.displayStall{color: #fff;}
 @media screen and (max-width: 990px) {
-    #submit{margin-top: 25px;}
+    #submitBtn,#backBtn{margin-top: 25px;}
 }

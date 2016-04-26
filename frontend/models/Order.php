@@ -35,6 +35,7 @@ class Order extends \yii\db\ActiveRecord
             [['name', 'address', 'mobile'], 'required'],
             [['address'], 'string', 'max' => 250],
             [['mobile'], 'integer'],
+            ['mobile','string', 'max'=>10],
             [['date'], 'safe'],
             [['name'], 'string', 'max' => 40],
             ['confirm_mobile', 'compare', 'compareAttribute' => 'mobile', 'message' => Yii::t('app', 'The mobile and confirm mobile does not match.'), 'skipOnEmpty' => false],

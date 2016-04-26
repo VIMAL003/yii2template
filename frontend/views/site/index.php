@@ -17,5 +17,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php echo $this->render('/site/contacttemplate', []); ?>
 
-<?php echo $this->render('/site/order', []); ?>
+<?php //echo $this->render('/site/order', []); ?>
 

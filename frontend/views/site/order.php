@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Order */
@@ -9,7 +10,7 @@ use yii\widgets\ActiveForm;
 $model = new frontend\models\Order();
 ?>
 <!-- CONTACT -->
-<div id="menu-5" class="content order-section">
+<div id="menu-5" class="order-section">
     <div class="text-center">
         <div class="page-top">
             <h1 class="page-title">My Information</h1>
@@ -17,7 +18,7 @@ $model = new frontend\models\Order();
         <h2 class="subtitle">We will contact to you from here.</h2>
     </div>
     <div class="row">
-        <?php $form = ActiveForm::begin(['validateOnBlur' => false,'options'=>['class'=>'contact-form order-form']]); ?>
+        <?php $form = ActiveForm::begin(['validateOnBlur' => false,'action'=>Url::toRoute('/site/order'),'options'=>['class'=>'contact-form order-form']]); ?>
 
             <div class="col-md-6">
                 <div class="row">
@@ -64,12 +65,25 @@ $model = new frontend\models\Order();
             </div>
             <div class="col-md-12">
                 <fieldset class="input-holder">
-                    <?= Html::submitButton(Yii::t('app', 'Get Order'), ['id'=>'submit','class' => 'btn default']) ?>
+                    <a id="backBtn" class="btn default" href="javascript:void(0);">
+                       <span class="menu-text">Back</span>
+                    </a>
+                    <?= Html::submitButton(Yii::t('app', 'Get Order'), ['id'=>'submitBtn','class' => 'btn default']) ?>
                 </fieldset>
             </div>
+            <input type="hidden" id="selectStallVal" value="0" />
+           
         <?php ActiveForm::end(); ?>
         
     </div>
 </div>
+<?php 
 
+echo $this->registerJs("$('document').ready(function(){ "
+        . "$('#backBtn').on('click',function(){ "
+        . "$('#menu-5').hide('slow');$('#storeListMenu').show('slow');"
+        . "}); "
+        . "});");
+
+?>
 <!-- END CONTACT -->
