@@ -174,6 +174,48 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    /**
+     * 
+     * @return type
+     */
+    public function actionOrder()
+    {
+        $modelOrder = new \frontend\models\Order();
+        $modelOrderStall = new \frontend\models\OrderStall();
+        if ($modelOrder->load(Yii::$app->request->post())) {
+            $postData = Yii::$app->request->post();
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                if ($flag = $modelOrder->save(false)) {
+                    $i = 0;
+                    foreach ($postData['selectedStall'] as $stallId) {
+                        if ($flag === false) {
+                            break;
+                        }
+                        $modelOrderStall = new \frontend\models\OrderStall();
+                        $modelOrderStall->order_id = $modelOrder->id;
+                        $modelOrderStall->stall_id = $stallId;
+                        $i++;
+                        if (!($flag = $modelOrderStall->save(false))) {
+                            break;
+                        }
+                    }
+
+                }
+                if ($flag) {
+                    $transaction->commit();
+                    Yii::$app->session->setFlash('success', Yii::t('app', 'Order has been created. We will contact to your register mobile number soon..'));
+                    return Yii::$app->getResponse()->redirect(['site/index']);
+                }else {
+                    $transaction->rollBack();
+                }
+            } catch (Exception $ex) {
+                $transaction->rollBack();
+            }
+        }
+
+       // return $this->render('index');
+    }
 
     /**
      * Requests password reset.

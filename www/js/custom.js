@@ -14,11 +14,27 @@ $(window).load(function () {
         }
             
 });
+$('document').ready(function(){
+     $("#orderStallList").html('');
+     var i = 0;
+     $('.block-content').on('click',function(){
+        var stallUi = $("#orderStallList");
 
-$('.block-content').on('click',function(){
-   if(!$(this).hasClass('addtocart')) {
-       $(this).addClass('addtocart');
-   }else{
-       $(this).removeClass('addtocart');
-   }
+        if(!$(this).hasClass('addtocart')) {
+            $(this).addClass('addtocart');
+             var datainput = "<input type='hidden' name='selectedStall[]' value='"+$(this).attr('id')+"'/>"
+             var dataLi = "<li id='select_"+$(this).attr('id')+"' class='displayStall'>"+ $('#label_'+$(this).attr('id')).html() + datainput+"</li>";
+             stallUi.append(dataLi);
+             i++;
+             $('#selectStallVal').val(i);
+
+        }else{
+            i--;
+            $('#selectStallVal').val(i);
+            $(this).removeClass('addtocart');
+            $('#select_'+$(this).attr('id')).remove();
+
+        }
+    });
 });
+

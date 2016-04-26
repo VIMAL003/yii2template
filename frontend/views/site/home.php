@@ -44,5 +44,6 @@ $model = new  frontend\models\SearchForm();
                 </fieldset>
                 <p class="small">Get our latest updates and news in your inbox!</p>
             <?php ActiveForm::end(); ?>
+       
     </div>
 <!-- END HOMEPAGE -->
