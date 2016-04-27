@@ -5,6 +5,7 @@
  * and open the template in the editor.
  */
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
  //\yii::$app->view->registerCssFile('css/developer.css');
 ?>
 <!-- GALLERY -->
@@ -34,6 +35,9 @@ use yii\widgets\ActiveForm;
                <fieldset class="input-holder">
                    <a id="nextBtn" class="btn default" href="javascript:void(0);">
                        <span class="menu-text">Next</span>
+                   </a>
+                   <a id="homeBtn" class="btn default" href="<?= Url::toRoute('/site/index');?>">
+                       <span class="menu-text">Home</span>
                    </a>
                </fieldset>
             </div>
