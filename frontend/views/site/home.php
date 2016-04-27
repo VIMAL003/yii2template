@@ -33,7 +33,7 @@ $model = new  frontend\models\SearchForm();
                           'pluginOptions'=>[
                               'depends'=>['searchform-city'],
                               'url'=>Url::to(['/site/get-area']),
-                              'placeholder'=>Yii::t('app', 'Selct your area here...')
+                              'placeholder'=>Yii::t('app', 'Select your area here...')
                           ],
           
                   ])->label(false); ?>
