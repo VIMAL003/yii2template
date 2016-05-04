@@ -52,15 +52,15 @@ include('header.php');
                         $phone = isset($_REQUEST['phone']) ? $_REQUEST['phone'] : "-";
                         $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : "-";
                         $website = isset($_REQUEST['website']) ? $_REQUEST['website'] : "-";
-                        $referral = isset($_REQUEST['referral']) ? $_REQUEST['referral'] : "-";
-                        $certified = isset($_REQUEST['certified']) ? $_REQUEST['certified'] : "-";
+                        $program = isset($_REQUEST['program']) ? $_REQUEST['program'] : "-";
+                        //$certified = isset($_REQUEST['certified']) ? $_REQUEST['certified'] : "-";
                         $activity = isset($_REQUEST['activity']) ? $_REQUEST['activity'] : "-";
                         $goodfit = isset($_REQUEST['goodfit']) ? $_REQUEST['goodfit'] : "-";
                         // EDIT THE 2 LINES BELOW AS REQUIRED
 
                         $message = "Please follow the deatils for Apply for Partner.\n \n";
                         $message = $message . "Full Name : " . $name . " \n Business Name : " . $business_name . " \n City : " . $city . " \n Country : " . $country . " \n Phone : " . $phone . " \n Email : " . $email;
-                        $message = $message . " \n Website : " . $website . " \n Program Apply : " . $referral;
+                        $message = $message . " \n Website : " . $website . " \n Program wish to Apply : " . $program;
                         $message = $message ." \n Tell us what is your main business activity? : " . $activity . " \n Why is your business a good fit? : " . $goodfit;
 
                         $email_to = "vimalpatel30989@gmail.com";
@@ -138,7 +138,7 @@ include('header.php');
                             <div class="form-group">
                                 <label for="email" class="col-lg-4 control-label">Business Name</label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="business_name" name="business_name" placeholder="Business Name" required >
+                                    <input type="text" class="form-control" id="business_name" name="business_name" placeholder="Business Name" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -156,7 +156,7 @@ include('header.php');
                             <div class="form-group">
                                 <label for="email" class="col-lg-4 control-label">Phone</label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone (Include country area code)" required >
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone (Include country area code)" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -166,11 +166,11 @@ include('header.php');
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-lg-4" for="message">I agree to the Terms & Conditions</label>
+                                <label class="control-label col-lg-4" for="message"></label>
                                 <div class="col-lg-8">
                                     <div class="fleft">
-                                        <input type="radio" class="form-control"  id="tearm_condition" name="tearm_condition" value="I agree to the Terms & Conditions">
-
+                                        <input type="radio" id="tearm_condition" name="tearm_condition" value="I agree to the Terms & Conditions">
+                                        <label>I agree to the Terms & Conditions</label>
                                     </div>
 
                                 </div>
@@ -180,49 +180,44 @@ include('header.php');
                             <div class="form-group">
                                 <label for="email" class="col-lg-4 control-label">Website</label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="website" name="website" placeholder="Website" required >
+                                    <input type="text" class="form-control" id="website" name="website" placeholder="Website" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="col-lg-4 control-label">Program you wish to apply</label>
                                 <div class="col-lg-8">
                                     <div class="fleft">
-                                        <input type="checkbox" class="form-control" id="referral" name="referral" value="Referral Partner">
+                                        <input type="radio" id="referral" name="program" value="referral">
                                         <label>Referral Partner</label>
                                     </div>
                                     <div class="fleft">
-                                        <input type="checkbox" class="form-control"  id="certified" name="certified" value="Certified Partner">
+                                        <input type="radio"  id="certified" name="program" value="Certified Partner">
                                         <label>Certified Partner</label>
                                     </div>
                                     <div class="fleft">
-                                        <input type="checkbox" class="form-control" id="strategic" name="strategic" value="Strategic Partner">
+                                        <input type="radio"  id="strategic" name="program" value="Strategic Partner">
                                         <label>Strategic Partner</label>
                                     </div>
-
-
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4" for="message">Tell us what is your main business activity?</label>
                                 <div class="col-lg-8">
-                                    <textarea class="form-control" id="activity" name="activity" rows="5" placeholder="Tell us what is your main business activity?" required ></textarea>
+                                    <textarea class="form-control" id="activity" name="activity" rows="5" placeholder="Tell us what is your main business activity?"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4" for="message">Why is your business a good fit?</label>
                                 <div class="col-lg-8">
-                                    <textarea class="form-control" id="goodfit" name="goodfit" rows="5" placeholder="Why is your business a good fit?" required ></textarea>
+                                    <textarea class="form-control" id="goodfit" name="goodfit" rows="5" placeholder="Why is your business a good fit?"></textarea>
                                 </div>
                             </div>
 
                         </div>
-
-
-
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button type="submit" class="btn btn-info btn-red">Submit</button> &nbsp;
-                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <a href="partner.php" class="btn btn-default">Cancel</a>
                                 <p class="form-group text-success">
                                 </p>
                             </div>
