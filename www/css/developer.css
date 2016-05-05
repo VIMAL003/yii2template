@@ -5,6 +5,13 @@
 .stallnameList{border: 1px solid;padding: 18px;}
 .alert-success.alert.fade.in{opacity: 0.98 !important;background:#fff;}
 .displayStall{color: #fff;}
+.contact-form .input-holder input[type="text"], .contact-form .input-holder input[type="email"], .contact-form .input-holder textarea , .contact-form .input-holder textarea{
+    margin-bottom: 0px !important;
+}
+.contact-form .input-holder{
+    margin-top:5%; 
+}
+.has-error .help-block{ color: #e0692d;}
 @media screen and (max-width: 990px) {
     #submitBtn,#backBtn{margin-top: 25px;}
 }
