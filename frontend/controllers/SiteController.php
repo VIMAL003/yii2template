@@ -200,7 +200,7 @@ class SiteController extends Controller
                             break;
                         }
                     }
-
+                    $modelOrder->sendEmail();
                 }
                 if ($flag) {
                     $transaction->commit();
