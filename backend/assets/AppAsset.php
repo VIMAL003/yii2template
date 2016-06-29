@@ -21,6 +21,10 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+      //  'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'bower_components/metisMenu/dist/metisMenu.min.js',
+        'dist/js/sb-admin-2.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
