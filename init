@@ -15,7 +15,7 @@
  */
 
 if (!extension_loaded('openssl')) {
-    die('The OpenSSL PHP extension is required by Yii2.');
+    die('The OpenSSL PHP extension is required by Yii2. ');
 }
 
 $params = getParams();
